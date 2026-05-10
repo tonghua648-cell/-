@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>简化版植物大战僵尸</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="hud">
+      <section class="sun-meter" aria-label="阳光数量">
+        <span class="sun-icon" aria-hidden="true"></span>
+        <strong id="sunCount">150</strong>
+      </section>
+
+      <nav class="seed-bank" aria-label="植物卡片">
+        <button class="seed-card" id="sunflowerCard" type="button" data-plant="sunflower">
+          <span class="seed-art sunflower-art" aria-hidden="true"></span>
+          <span class="seed-name">向日葵</span>
+          <span class="seed-cost">50</span>
+          <span class="cooldown-bar"></span>
+        </button>
+        <button class="seed-card" id="peashooterCard" type="button" data-plant="peashooter">
+          <span class="seed-art peashooter-art" aria-hidden="true"></span>
+          <span class="seed-name">豌豆射手</span>
+          <span class="seed-cost">100</span>
+          <span class="cooldown-bar"></span>
+        </button>
+      </nav>
+
+      <section class="round-info" aria-label="关卡信息">
+        <span>击杀 <strong id="killCount">0</strong>/<strong id="targetCount">20</strong></span>
+        <span>已出现 <strong id="spawnCount">0</strong>/20</span>
+      </section>
+    </header>
+
+    <section class="message-panel" aria-live="polite">
+      <strong id="gameStatus">选择植物卡片，然后点击草坪种植。</strong>
+      <button id="restartButton" class="restart-button" type="button" hidden>重新开始</button>
+    </section>
+
+    <section class="yard-wrap">
+      <div class="left-line" aria-hidden="true"></div>
+      <div id="yard" class="yard" aria-label="5 行 9 列草坪"></div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
